@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 const styleForm = {
     form: {
@@ -16,11 +16,12 @@ const styleForm = {
 };
 
 export const TodoForm = () => {
+    const [value, setValue] = useState("")
     return (
         <form className={styleForm.form.class}>
             <input type={styleForm.input.type} className={styleForm.input.class}
-                   placeholder={styleForm.input.placeholder}/>
-            <button type={styleForm.button.type} className={styleForm.button.class}></button>
+                   placeholder={styleForm.input.placeholder} onChange={(e) => console.log(e.target.value)}/>
+            <button type={styleForm.button.type} className={styleForm.button.class}>Add Task</button>
         </form>
     )
 }
